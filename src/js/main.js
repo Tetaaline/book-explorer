@@ -1,4 +1,5 @@
 import { fetchBooks } from "./fetchBooks.js";
+import { addFavorite, removeFavorite, isFavorite } from "./favorites.js";
 
 const bookList = document.querySelector("#book-list");
 const bookStatus = document.querySelector("#book-status");
@@ -25,7 +26,7 @@ function showMessage(text) {
 // Create one book card
 function createCard(book) {
   const card = document.createElement("article");
-  card.className = "rounded-xl bg-white p-3 shadow-sm hover:shadow-md";
+  card.className = "flex flex-col rounded-xl bg-white p-3 shadow-sm hover:shadow-md";
 
   const cover = document.createElement("img");
   cover.className = "mb-3 aspect-[2/3] w-full rounded-lg object-cover";
@@ -42,10 +43,34 @@ function createCard(book) {
   title.textContent = book.title;
 
   const author = document.createElement("p");
-  author.className = "mt-1 text-sm text-stone-500";
+  author.className = "mt-1 mb-3 flex-1 text-sm text-stone-500";
   author.textContent = book.author_name?.[0] || "Unknown author";
 
-  card.append(cover, title, author);
+    // Favorite button
+  const favButton = document.createElement("button");
+
+  function updateFavButton() {
+    if (isFavorite(book.key)) {
+      favButton.textContent = "Saved ✓";
+      favButton.className = "rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800";
+    } else {
+      favButton.textContent = "Add to favorites";
+      favButton.className = "rounded-full bg-emerald-900 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-950";
+    }
+  }
+
+  favButton.addEventListener("click", () => {
+    if (isFavorite(book.key)) {
+      removeFavorite(book.key);
+    } else {
+      addFavorite(book);
+    }
+    updateFavButton();
+  });
+
+  updateFavButton();
+
+  card.append(cover, title, author, favButton);
   return card;
 }
 
