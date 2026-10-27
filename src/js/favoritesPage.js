@@ -5,14 +5,14 @@ const favoritesEmpty = document.querySelector("#favorites-empty");
 const suggestedList = document.querySelector("#suggested-list");
 
 // Hardcoded books the user can add 
-const suggestedBooks = [
-  { key: "sample-1", title: "Things Fall Apart", author_name: ["Chinua Achebe"] },
-  { key: "sample-2", title: "Purple Hibiscus", author_name: ["Chimamanda Ngozi Adichie"] },
-  { key: "sample-3", title: "The Hobbit", author_name: ["J. R. R. Tolkien"] },
-  { key: "sample-4", title: "Dune", author_name: ["Frank Herbert"] },
-  { key: "sample-5", title: "Pride and Prejudice", author_name: ["Jane Austen"] },
-  { key: "sample-6", title: "Matilda", author_name: ["Roald Dahl"] },
-];
+   const suggestedBooks = [
+     { key: "sample-1", title: "Things Fall Apart", author_name: ["Chinua Achebe"], isbn: "9780385474542" },
+     { key: "sample-2", title: "Purple Hibiscus", author_name: ["Chimamanda Ngozi Adichie"], cover_i: 12063933 },,
+     { key: "sample-3", title: "The Hobbit", author_name: ["J. R. R. Tolkien"], isbn: "9780547928227" },
+     { key: "sample-4", title: "Dune", author_name: ["Frank Herbert"], isbn: "9780441172719" },
+     { key: "sample-5", title: "Pride and Prejudice", author_name: ["Jane Austen"], isbn: "9780141439518" },
+     { key: "sample-6", title: "Matilda", author_name: ["Roald Dahl"], isbn: "9780142410370" },
+   ];
 
 // Create one book card with a button
 function createCard(book, buttonText, buttonClass, onClick) {
@@ -23,11 +23,13 @@ function createCard(book, buttonText, buttonClass, onClick) {
   cover.className = "mb-3 aspect-[2/3] w-full rounded-lg object-cover";
   cover.alt = `Cover of ${book.title}`;
 
-  if (book.cover_i) {
-    cover.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
-  } else {
-    cover.src = "https://placehold.co/300x450?text=No+Cover";
-  }
+    if (book.cover_i) {
+     cover.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+   } else if (book.isbn) {
+     cover.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`;
+   } else {
+     cover.src = "https://placehold.co/300x450?text=No+Cover";
+   }
 
   const title = document.createElement("h3");
   title.className = "line-clamp-2 font-semibold text-stone-900";
