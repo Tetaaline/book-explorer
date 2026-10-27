@@ -1,85 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Explorer</title>
-  <link rel="stylesheet" href="/src/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Explorer</title>
+    <link rel="stylesheet" href="/src/styles.css">
 </head>
+
 <body class="bg-stone-50 text-stone-900">
 
-  <header class="border-b border-stone-200 bg-white">
-   <!-- Navigation  -->
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-      <a href="/" class="text-xl font-bold tracking-tight">
-        paper<span class="text-emerald-700">wing.</span>
-      </a>
+    <header class="border-b border-stone-200 bg-white">
+        <!-- Navigation  -->
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+            <a href="/" class="text-xl font-bold tracking-tight">
+                paper<span class="text-emerald-700">wing.</span>
+            </a>
 
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a href="/" class="text-emerald-700">Home</a>
-        <a href="/favorites.html" class="text-stone-600 hover:text-emerald-700">Favorites</a>
-        <a href="/about.html" class="text-stone-600 hover:text-emerald-700">About</a>
-      </div>
-    </nav>
-  </header>
-  
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="/" class="text-emerald-700">Home</a>
+                <a href="/favorites.html" class="text-stone-600 hover:text-emerald-700">Favorites</a>
+                <a href="/about.html" class="text-stone-600 hover:text-emerald-700">About</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <!-- Hero section -->
-    <section class="mx-auto max-w-7xl px-6 py-20 text-center sm:py-28">
-      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
-        Your next chapter starts here
-      </p>
 
-      <h1 class="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
-        Find your next <span class="text-emerald-700">great read.</span>
-      </h1>
+    <main>
+        <!-- Hero section -->
 
-      <p class="mx-auto mt-6 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">
-        Explore stories, discover new ideas, and find books worth reading.
-      </p>
+        <section class="relative overflow-hidden bg-cover bg-center px-6 py-20 text-center sm:py-28"
+            style="background-image: linear-gradient(rgba(30, 29, 20, 0.48), rgba(30, 29, 20, 0.48)), url('images/hero.png');">
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100">
+                Your next chapter starts here
+            </p>
 
-      <form id="search-form" class="mx-auto mt-10 flex max-w-xl gap-3">
-        <input 
-            type="search"
-            id="search-input"
-            placeholder="Search books by title..."
-            class="min-w-0 flex-1 rounded-xl border border-stone-300 bg-white px-4 py-3 outline-none focus:border-emerald-700"
-        >
-        <button
-          type="submit"
-          class="rounded-xl bg-emerald-800 px-6 py-3 font-semibold text-white hover:bg-emerald-900"
-        >
-          Search
-        </button>
-      </form>
-    </section>
+            <h1 class="mx-auto max-w-3xl font-serif text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                Find your next
+                <span class="block text-emerald-200">great read.</span>
+            </h1>
 
-    
+            <p class="mx-auto mt-6 max-w-xl text-base leading-7 text-white sm:text-lg">
+                Explore stories, discover new ideas, and find books worth reading.
+            </p>
 
-    <!-- Book collection -->
-    <section class="mx-auto max-w-7xl px-6 pb-20">
-      <div class="mb-8">
-        <p class="text-sm font-medium text-emerald-700">THE COLLECTION</p>
-        <h2 class="mt-2 text-3xl font-bold tracking-tight">Explore books</h2>
-        <p class="mt-2 text-stone-600">Find a story that speaks to you.</p>
-      </div>
+            <form id="search-form" class="mx-auto mt-8 flex max-w-xl gap-3 rounded-full bg-white p-2">
+                <input type="search" id="search-input" placeholder="Search books by title..."
+                    class="min-w-0 flex-1 rounded-full bg-transparent px-4 py-3 text-stone-800 outline-none">
+                <button type="submit"
+                    class="rounded-full bg-emerald-900 px-6 py-3 font-semibold text-white hover:bg-emerald-950">
+                    Search
+                </button>
+            </form>
+        </section>
 
-      <div id="book-list" class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <!-- Book cards -->
-      </div>
-    </section>
-  </main>
 
-  <footer class="border-t border-stone-200 bg-white">
-    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-8 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between">
-      <p class="font-semibold text-stone-800">booknest.</p>
-      <p>Discover your next favorite book.</p>
-      <p>&copy; 2026 PaperWing</p>
-    </div>
-  </footer>
 
-  <script type="module" src="/src/js/main.js"></script>
+
+        <!-- Book collection -->
+        <section class="mx-auto max-w-7xl px-6 pb-20">
+            <div class="mb-8">
+                <p class="text-sm font-medium text-emerald-700">THE COLLECTION</p>
+                <h2 class="mt-2 text-3xl font-bold tracking-tight">Explore books</h2>
+                <p class="mt-2 text-stone-600">Find a story that speaks to you.</p>
+            </div>
+
+            <div id="book-list" class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+                <!-- Book cards -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-stone-200 bg-white">
+        <div
+            class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-8 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between">
+            <p class="font-semibold text-stone-800">booknest.</p>
+            <p>Discover your next favorite book.</p>
+            <p>&copy; 2026 PaperWing</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
 </body>
+
 </html>
