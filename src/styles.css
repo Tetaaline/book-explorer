@@ -1,2 +1,7 @@
 
 @import "tailwindcss";
+
+@theme {
+  --color-beige: #f3ece0;
+  --color-cream: #fbf8f2;
+}
