@@ -10,17 +10,28 @@
 
 <body class="bg-stone-50 text-stone-900">
 
-    <header class="border-b border-stone-200 bg-white">
+        <header class="border-b border-stone-200 bg-white">
         <!-- Navigation  -->
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-6 py-5">
             <a href="/" class="text-xl font-bold tracking-tight">
                 paper<span class="text-emerald-700">wing.</span>
             </a>
 
-            <div class="flex items-center gap-6 text-sm font-medium">
-                <a href="/" class="text-emerald-700">Home</a>
-                <a href="/favorites.html" class="text-stone-600 hover:text-emerald-700">Favorites</a>
-                <a href="/about.html" class="text-stone-600 hover:text-emerald-700">About</a>
+            <!-- Hamburger button (phones only) -->
+            <button id="menu-button" type="button" aria-label="Open menu" aria-expanded="false"
+                class="rounded-lg p-2 text-stone-700 hover:bg-stone-100 md:hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Links: dropdown on phones, a row on bigger screens -->
+            <div id="nav-links"
+                class="hidden w-full flex-col gap-1 pt-4 text-sm font-medium md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:pt-0">
+                <a href="/" class="py-2 text-emerald-700 md:py-0">Home</a>
+                <a href="/favorites.html" class="py-2 text-stone-600 hover:text-emerald-700 md:py-0">Favorites</a>
+                <a href="/about.html" class="py-2 text-stone-600 hover:text-emerald-700 md:py-0">About</a>
             </div>
         </nav>
     </header>
@@ -79,7 +90,7 @@
                 <div id="book-status"></div>
 
                 <div id="book-list"
-                    class="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                    class="grid grid-cols-1 min-[340px]:grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                 </div>
         </section>
 
@@ -95,6 +106,7 @@
     </footer>
 
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/nav.js"></script>
 </body>
 
 </html>
