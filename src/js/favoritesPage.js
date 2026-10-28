@@ -17,7 +17,7 @@ const suggestedList = document.querySelector("#suggested-list");
 // Create one book card with a button
 function createCard(book, buttonText, buttonClass, onClick) {
   const card = document.createElement("article");
-  card.className = "flex flex-col rounded-xl bg-white p-3 shadow-sm";
+    card.className = "flex flex-col rounded-xl bg-white p-3 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg";
 
   const cover = document.createElement("img");
   cover.className = "mb-3 aspect-[2/3] w-full rounded-lg object-cover";
